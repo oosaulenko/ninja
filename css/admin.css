@@ -1,0 +1,10 @@
+/** Admin CSS */
+
+.radio-image-wrapper{
+    float:left; 
+    margin-right:30px;
+}
+
+#accordion-section-themes, #accordion-section-custom_css, #accordion-panel-widgets{
+    display: none!important;
+}

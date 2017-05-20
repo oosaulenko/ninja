@@ -1,0 +1,777 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Mudita v1.0.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2016-07-28 15:36+0300\n"
+"Last-Translator: admin\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%100/10==1 ? 2 : n%10==1 ? 0 : (n+9)%10>3 ? 2 : 1;\n"
+"X-Generator: Poedit 1.8.2\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Textdomain-Support: yes\n"
+"Language: ru\n"
+"X-Poedit-SearchPath-0: .\n"
+
+# @ mudita
+#: 404.php:13
+msgid "404"
+msgstr ""
+
+# @ mudita
+#: 404.php:14
+msgid "Page not found"
+msgstr "Страница не найдена"
+
+# @ mudita
+#: 404.php:17
+msgid "homepage"
+msgstr "Главная страница"
+
+# @ mudita
+#: 404.php:18
+msgid "previous page"
+msgstr "предыдущая страница"
+
+# @ mudita
+#: 404.php:20
+#, php-format
+msgid "The page you are looking for doesn&apos;t exist or an other error occured. Go to our %1$s or go back to %2$s."
+msgstr "Страница, которую вы ищете, по всей видимости, не существует. Пожалуйста, вернитесь %s или %s"
+
+# @ mudita
+#: archive.php:38 inc/extras.php:265 index.php:38 search.php:42
+msgid "Page"
+msgstr "Страница"
+
+# @ mudita
+#: comments.php:29
+msgid "Comments"
+msgstr "Комментарии"
+
+# @ mudita
+#: comments.php:45
+msgid "Comment navigation"
+msgstr "Навигация по комментариям"
+
+# @ mudita
+#: comments.php:48
+msgid "Older Comments"
+msgstr "Старые комментарии"
+
+# @ mudita
+#: comments.php:49
+msgid "Newer Comments"
+msgstr "Новые комментарии"
+
+# @ mudita
+#: comments.php:62
+msgid "Comments are closed."
+msgstr "Комментарии закрыты."
+
+# @ mudita
+#: comments.php:75
+msgid "Required fields are marked"
+msgstr "Обязательные для заполнения поля отмечены"
+
+# @ mudita
+#: comments.php:80
+msgid "Name*"
+msgstr "Имя *"
+
+# @ mudita
+#: comments.php:84
+msgid "Email*"
+msgstr "Почта *"
+
+# @ mudita
+#: comments.php:88
+msgid "Website"
+msgstr "Сайт"
+
+# @ mudita
+#: comments.php:98
+msgid "Leave a Reply"
+msgstr "Отставить комментарий"
+
+# @ mudita
+#: comments.php:99
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr "Оставить комментарий на %s"
+
+# @ mudita
+#: comments.php:100
+msgid "Cancel Reply"
+msgstr "Отменить ответ"
+
+# @ mudita
+#: comments.php:101
+msgid "POST COMMENT"
+msgstr "Отправить комментарий"
+
+# @ mudita
+#: comments.php:104
+msgctxt "noun"
+msgid "Comment"
+msgstr "Комментарий"
+
+# @ mudita
+#: comments.php:105
+msgid "Comment"
+msgstr "Комментарий"
+
+# @ mudita
+#: comments.php:110
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "Вы должны <a href=\"%s\">авторизироваться</a> чтобы оставить комментарий."
+
+# @ mudita
+#: comments.php:116
+#, php-format
+msgid "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of this account\">Log out?</a>"
+msgstr "Вы вошли как <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Выйти из этого аккаунта\">Выйти?</a>"
+
+# @ mudita
+#: comments.php:123
+msgid "Your email address will not be published. "
+msgstr "Ваш электронный адрес не будет опубликован."
+
+# @ mudita
+#: functions.php:47
+msgid "Primary"
+msgstr "Основное меню"
+
+# @ mudita
+#: functions.php:48
+msgid "Secondary"
+msgstr "Дополнительное меню"
+
+# @ mudita
+#: functions.php:147
+msgid "Right Sidebar"
+msgstr "Правый сайдбар"
+
+# @ mudita
+#: functions.php:157
+msgid "Footer One"
+msgstr "Первый нижний колонтитул"
+
+# @ mudita
+#: functions.php:167
+msgid "Footer Two"
+msgstr "Второй нижний колонтитул"
+
+# @ mudita
+#: functions.php:177
+msgid "Footer Three"
+msgstr "Третий нижний колонтитул"
+
+# @ mudita
+#: functions.php:187
+msgid "Footer Four"
+msgstr "Четвертый нижний колонтитул"
+
+# @ mudita
+#: header.php:69
+msgid "Menu"
+msgstr "Меню"
+
+# @ mudita
+#: inc/customizer.php:18
+msgid "Choose Post"
+msgstr "Выбрать тип записи"
+
+# @ mudita
+#: inc/customizer.php:34
+msgid "Choose Category"
+msgstr "Выберите категорию"
+
+# @ mudita
+#: inc/customizer.php:46
+msgid "Default Settings"
+msgstr "Сбросить настройки"
+
+# @ mudita
+#: inc/customizer.php:47
+msgid "Default section provided by WordPress customizer."
+msgstr ""
+
+# @ mudita
+#: inc/customizer.php:66
+msgid "Header Settings"
+msgstr "Дополнительные поля"
+
+# @ mudita
+#: inc/customizer.php:84
+msgid "Enable Header Info"
+msgstr "Включить информацию в шапке"
+
+# @ mudita
+#: inc/customizer.php:102
+msgid "Header Phone"
+msgstr "Телефон в шапке"
+
+# @ mudita
+#: inc/customizer.php:102
+msgid "Header Mail"
+msgstr "Почта в шапке"
+
+# @ mudita
+#: inc/customizer.php:115
+msgid "Home Page Settings"
+msgstr "Настройки главной страницы"
+
+# @ mudita
+#: inc/customizer.php:116
+msgid "Customize Home Page Settings"
+msgstr "Настройка параметров домашней страницы"
+
+# @ mudita
+#: inc/customizer.php:124
+msgid "Banner Section"
+msgstr "Раздел Баннеры"
+
+# @ mudita
+#: inc/customizer.php:142
+msgid "Enable Banner Section"
+msgstr "Включить раздел баннеров"
+
+# @ mudita
+#: inc/customizer.php:160
+msgid "Select Banner Post"
+msgstr "Выберите запись для раздела"
+
+# @ mudita
+#: inc/customizer.php:179 inc/customizer.php:338 inc/customizer.php:423
+#: inc/widget-featured-post.php:111
+msgid "Read More Text"
+msgstr "Читать далее"
+
+# @ mudita
+#: inc/customizer.php:190
+msgid "Featured Section"
+msgstr "Закрепленная секция"
+
+# @ mudita
+#: inc/customizer.php:208
+msgid "Enable Featured Section"
+msgstr "Включить закрепленный раздел"
+
+# @ mudita
+#: inc/customizer.php:226
+msgid "Featured Section Title"
+msgstr "Заголовок раздела"
+
+# @ mudita
+#: inc/customizer.php:244
+msgid "Featured Section Content"
+msgstr "Содержание раздела Контент"
+
+# @ mudita
+#: inc/customizer.php:262
+msgid "Select Featured Post One"
+msgstr "Выберите первую запись для раздела"
+
+# @ mudita
+#: inc/customizer.php:281
+msgid "Select Featured Post Two"
+msgstr "Выберите вторую запись для раздела"
+
+# @ mudita
+#: inc/customizer.php:300
+msgid "Select Featured Post Three"
+msgstr "Выберите третью запись для раздела"
+
+# @ mudita
+#: inc/customizer.php:319
+msgid "Select Featured Post Four"
+msgstr "Выберите четвертую запись для раздела"
+
+# @ mudita
+#: inc/customizer.php:349
+msgid "Service Section"
+msgstr "Секция Услуги"
+
+# @ mudita
+#: inc/customizer.php:367
+msgid "Enable Service Section"
+msgstr "Включить раздел Услуги на главной странице"
+
+# @ mudita
+#: inc/customizer.php:385
+msgid "Select Service Post One"
+msgstr "Выбрать первую запись"
+
+# @ mudita
+#: inc/customizer.php:404
+msgid "Select Service Post Two"
+msgstr "Выбрать вторую запись"
+
+# @ mudita
+#: inc/customizer.php:434
+msgid "Team Section"
+msgstr "Секция Команда"
+
+# @ mudita
+#: inc/customizer.php:452
+msgid "Enable Team Section"
+msgstr "Включить секцию Наша команда"
+
+# @ mudita
+#: inc/customizer.php:470
+msgid "Team Section Title"
+msgstr "Заголовок секции Команда"
+
+# @ mudita
+#: inc/customizer.php:488
+msgid "Team Section Content"
+msgstr "Содержание раздела Команда"
+
+# @ mudita
+#: inc/customizer.php:506
+msgid "Select Category"
+msgstr "Выберите категорию"
+
+# @ mudita
+#: inc/customizer.php:518
+msgid "Blog Section"
+msgstr "Раздел Блог"
+
+# @ mudita
+#: inc/customizer.php:536
+msgid "Enable Blog Section"
+msgstr "Включить секцию блога"
+
+# @ mudita
+#: inc/customizer.php:554
+msgid "Blog Section Title"
+msgstr "Заголовок секции блога"
+
+# @ mudita
+#: inc/customizer.php:572
+msgid "Show Blog Date"
+msgstr "Отображать дату записи"
+
+# @ mudita
+#: inc/customizer.php:583
+msgid "Testimonial Section"
+msgstr "Секция Отзывов"
+
+# @ mudita
+#: inc/customizer.php:601
+msgid "Enable Testimonial Section"
+msgstr "Включить секцию Отзывы"
+
+# @ mudita
+#: inc/customizer.php:619
+msgid "Testimonial Section Title"
+msgstr "Заголовок раздела Отзывы"
+
+# @ mudita
+#: inc/customizer.php:637
+msgid "Testimonial Section Content"
+msgstr "Содержание раздела Отзывы"
+
+# @ mudita
+#: inc/customizer.php:655
+msgid "Select Testimonial Post One"
+msgstr "Выберите первую запись для раздела"
+
+# @ mudita
+#: inc/customizer.php:674
+msgid "Select Testimonial Post Two"
+msgstr "Выберите вторую запись для раздела"
+
+# @ mudita
+#: inc/customizer.php:693
+msgid "Select Testimonial Post Three"
+msgstr "Выберите третью запись для раздела"
+
+# @ mudita
+#: inc/customizer.php:707
+msgid "Breadcrumb Settings"
+msgstr "Хлебные крошки"
+
+# @ mudita
+#: inc/customizer.php:725
+msgid "Enable Breadcrumb"
+msgstr "Включить \"хлебные крошки\""
+
+# @ mudita
+#: inc/customizer.php:743
+msgid "Show current"
+msgstr "Показать текущее положение"
+
+# @ mudita
+#: inc/customizer.php:753 inc/extras.php:174
+msgid "Home"
+msgstr "Главная"
+
+# @ mudita
+#: inc/customizer.php:761
+msgid "Breadcrumb Home Text"
+msgstr "Хлебные крошки - Главная"
+
+# @ mudita
+#: inc/customizer.php:771
+msgid ">"
+msgstr ""
+
+# @ mudita
+#: inc/customizer.php:779
+msgid "Breadcrumb Separator"
+msgstr "Разделитель"
+
+# @ mudita
+#: inc/customizer.php:790
+msgid "Social Settings"
+msgstr "Социальные настройки"
+
+# @ mudita
+#: inc/customizer.php:790
+msgid "Contacts inform"
+msgstr "Контактная информация"
+
+# @ mudita
+#: inc/customizer.php:791
+msgid "Leave blank if you do not want to show the social link."
+msgstr "Оставьте пустым, если вы не хотите показывать социальные кнопки."
+
+# @ mudita
+#: inc/customizer.php:809
+msgid "Enable Social Icons in Header"
+msgstr "Включить иконки соц. сетей в шапке"
+
+# @ mudita
+#: inc/customizer.php:827
+msgid "Enable Social Section"
+msgstr "Включить секцию соц.сетей"
+
+# @ mudita
+#: inc/customizer.php:845
+msgid "Social Section Title"
+msgstr "Заголовок раздела"
+
+# @ mudita
+#: inc/customizer.php:863 inc/extras.php:296
+msgid "Facebook"
+msgstr ""
+
+# @ mudita
+#: inc/customizer.php:881 inc/extras.php:298
+msgid "Twitter"
+msgstr ""
+
+# @ mudita
+#: inc/customizer.php:899
+msgid "Pintest"
+msgstr ""
+
+# @ mudita
+#: inc/customizer.php:917 inc/extras.php:302
+msgid "LinkedIn"
+msgstr ""
+
+# @ mudita
+#: inc/customizer.php:935
+msgid "Google Plus"
+msgstr ""
+
+# @ mudita
+#: inc/customizer.php:953 inc/extras.php:306
+msgid "Instagram"
+msgstr ""
+
+# @ mudita
+#: inc/customizer.php:971 inc/extras.php:308
+msgid "YouTube"
+msgstr ""
+
+# @ mudita
+#: inc/customizer.php:982
+msgid "Custom CSS Settings"
+msgstr "Пользовательские CSS настройки"
+
+# @ mudita
+#: inc/customizer.php:1000
+msgid "Custom Css"
+msgstr "Пользовательские CSS"
+
+# @ mudita
+#: inc/customizer.php:1002
+msgid "Put your custom CSS"
+msgstr "Вставьте здесь свой CSS"
+
+# @ mudita
+#: inc/extras.php:173
+msgid "&gt;"
+msgstr ""
+
+# @ mudita
+#: inc/extras.php:196 search.php:21
+msgid "Search Result"
+msgstr "Результаты поиска"
+
+# @ mudita
+#: inc/extras.php:300
+msgid "Pinterst"
+msgstr ""
+
+# @ mudita
+#: inc/extras.php:304
+msgid "Gooble Plus"
+msgstr ""
+
+# @ mudita
+#: inc/extras.php:356
+#, php-format
+msgid "<b class=\"fn\">%s</b>"
+msgstr ""
+
+# @ mudita
+#: inc/extras.php:359
+msgid "Your comment is awaiting moderation."
+msgstr "Ваш комментарий ожидает модерации."
+
+# @ mudita
+#. translators: 1: date, 2: time
+#: inc/extras.php:366
+#, php-format
+msgid "%s"
+msgstr ""
+
+# @ mudita
+#: inc/extras.php:366
+msgid "(Edit)"
+msgstr "Изменить"
+
+# @ mudita
+#. translators: used between list items, there is a space after the comma
+#: inc/extras.php:447 inc/template-tags.php:51 inc/template-tags.php:57
+msgid ", "
+msgstr ""
+
+# @ mudita
+#: inc/extras.php:455 inc/template-tags.php:53 inc/template-tags.php:59
+#: inc/widget-popular-post.php:73 inc/widget-popular-post.php:75
+#: inc/widget-recent-post.php:72 inc/widget-recent-post.php:74
+#, php-format
+msgid "%1$s"
+msgstr ""
+
+# @ mudita
+#: inc/extras.php:518
+msgid "Copyright &copy; "
+msgstr ""
+
+# @ mudita
+#: inc/extras.php:520
+msgid "Mudita by: Rara Theme"
+msgstr ""
+
+# @ mudita
+#: inc/extras.php:521
+#, php-format
+msgid "Powered by: %s"
+msgstr ""
+
+# @ mudita
+#: inc/extras.php:521
+msgid "https://wordpress.org/"
+msgstr ""
+
+# @ mudita
+#: inc/metabox.php:13
+msgid "Sidebar Layout"
+msgstr "Структура сайдбара"
+
+# @ mudita
+#: inc/metabox.php:23
+msgid "Right sidebar (default)"
+msgstr "Правый сайдбар (по умолчанию)"
+
+# @ mudita
+#: inc/metabox.php:28
+msgid "No sidebar"
+msgstr "Без сайдбара"
+
+# @ mudita
+#: inc/metabox.php:40
+msgid "Choose Sidebar Template"
+msgstr "Выберите шаблон боковой панели"
+
+# @ mudita
+#: inc/template-tags.php:23
+#, php-format
+msgctxt "post date"
+msgid "%s"
+msgstr ""
+
+# @ mudita
+#: inc/template-tags.php:28
+#, php-format
+msgctxt "post author"
+msgid "%s"
+msgstr ""
+
+# @ mudita
+#: inc/template-tags.php:36
+msgid "Leave a comment"
+msgstr "Отставить комментарий"
+
+# @ mudita
+#: inc/template-tags.php:36
+msgid "1 Comment"
+msgstr "Один комментарий"
+
+# @ mudita
+#: inc/template-tags.php:36
+msgid "% Comments"
+msgstr "Комментариев: %"
+
+# @ mudita
+#. translators: %s: Name of current post
+#. translators: %s: Name of current post
+#: inc/template-tags.php:66 template-parts/content-page.php:42
+#, php-format
+msgid "Edit %s"
+msgstr "Изменить"
+
+# @ mudita
+#: inc/widget-featured-post.php:25
+msgid "RARA: Featured Post"
+msgstr ""
+
+# @ mudita
+#: inc/widget-featured-post.php:26
+msgid "A Featured Post Widget"
+msgstr ""
+
+# @ mudita
+#: inc/widget-featured-post.php:40 inc/widget-featured-post.php:94
+#: inc/widget-featured-post.php:141 template-parts/content-search.php:22
+msgid "Read More"
+msgstr ""
+
+# @ mudita
+#: inc/widget-featured-post.php:82
+msgid "--choose--"
+msgstr ""
+
+# @ mudita
+#: inc/widget-featured-post.php:101
+msgid "Posts"
+msgstr ""
+
+# @ mudita
+#: inc/widget-featured-post.php:115
+msgid "Excerpt Character"
+msgstr ""
+
+# @ mudita
+#: inc/widget-featured-post.php:121 inc/widget-popular-post.php:121
+#: inc/widget-recent-post.php:120
+msgid "Show Post Thumbnail"
+msgstr ""
+
+# @ mudita
+#: inc/widget-popular-post.php:25
+msgid "RARA: Popular Post"
+msgstr ""
+
+# @ mudita
+#: inc/widget-popular-post.php:26
+msgid "A Popular Post Widget"
+msgstr ""
+
+# @ mudita
+#: inc/widget-popular-post.php:40 inc/widget-popular-post.php:102
+#: inc/widget-popular-post.php:145
+msgid "Popular Posts"
+msgstr ""
+
+# @ mudita
+#: inc/widget-popular-post.php:110 inc/widget-recent-post.php:109
+msgid "Title"
+msgstr ""
+
+# @ mudita
+#: inc/widget-popular-post.php:115 inc/widget-recent-post.php:114
+msgid "Number of Posts"
+msgstr ""
+
+# @ mudita
+#: inc/widget-popular-post.php:126 inc/widget-recent-post.php:125
+msgid "Show Post Date"
+msgstr ""
+
+# @ mudita
+#: inc/widget-recent-post.php:25
+msgid "RARA: Recent Post"
+msgstr ""
+
+# @ mudita
+#: inc/widget-recent-post.php:26
+msgid "A Recent Post Widget"
+msgstr ""
+
+# @ mudita
+#: inc/widget-recent-post.php:40 inc/widget-recent-post.php:101
+#: inc/widget-recent-post.php:144
+msgid "Recent Posts"
+msgstr ""
+
+# @ mudita
+#: search.php:22
+msgid " result for: "
+msgstr ""
+
+# @ mudita
+#: sections/section-testimonial.php:42 sections/section-testimonial.php:75
+msgid "- "
+msgstr ""
+
+# @ mudita
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr "Ничего не найдено"
+
+# @ mudita
+#: template-parts/content-none.php:21
+#, php-format
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Готовы опубликовать свою первую запись? <a href=\"%1$s\">Начните сейчас</a>."
+
+# @ mudita
+#: template-parts/content-none.php:25
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "К сожалению, по вашему запросу ничего не найдено. Попробуйте использовать другие ключевые слова."
+
+# @ mudita
+#: template-parts/content-none.php:31
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Кажется, мы не можем найти то, что вы ищете. Возможно поиск сможет помочь."
+
+# @ mudita
+#: template-parts/content-page.php:31 template-parts/content.php:63
+msgid "Pages:"
+msgstr "Страницы:"
+
+# @ mudita
+#. translators: %s: Name of current post.
+#: template-parts/content.php:47 template-parts/content.php:56
+#, php-format
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Читать далее %s <span class=\"meta-nav\">&rarr;</span>"
+
+# @ mudita
+#: template-parts/content.php:72
+msgid "Learn More "
+msgstr "Читать далее"

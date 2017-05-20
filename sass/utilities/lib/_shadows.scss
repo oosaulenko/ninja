@@ -1,0 +1,66 @@
+///*****************************************************************
+//IMPORT COMPASS
+//- If you don't have Compass you can create your own mixins
+//for CSS3 or use bourbon etc.
+//Examples: http://ahrengot.github.io/sass-dropshadows/
+//******************************************************************/
+@import "compass/css3";
+
+///******************************************************************
+//IMPORT SHADOW TYPES
+//******************************************************************/
+@import "shadow-types";
+
+///******************************************************************
+//SHADOW MIXINS
+//******************************************************************/
+@mixin shadow($type: lifted, $color:null) {
+	position: relative;
+
+	&:before, &:after {
+		position: absolute;
+		z-index: -2;
+		content: ''
+	}
+
+	@if $type == lifted { @include shadow-lifted($color); }
+	@if $type == perspective { @include shadow-perspective($color); }
+	@if $type == perspective-right { @include shadow-perspective-right($color); }
+	@if $type == raised { @include shadow-raised($color); }
+	@if $type == curved { @include shadow-curved($color); }
+	@if $type == curved-top { @include shadow-curved-top($color); }
+	@if $type == curved-bottom { @include shadow-curved-bottom($color); }
+	@if $type == curved-vertical { @include shadow-curved-vertical($color); }
+	@if $type == curved-vertical-left { @include shadow-curved-vertical-left($color); }
+	@if $type == curved-vertical-right { @include shadow-curved-vertical-right($color); }
+}
+
+///******************************************************************
+//SHADOW CLASSES
+//******************************************************************/
+//$shadow_types:
+//	lifted,
+//	raised,
+//	perspective,
+//	perspective-right,
+//	curved,
+//	curved-top,
+//	curved-bottom,
+//	curved-vertical,
+//	curved-vertical-left,
+//	curved-vertical-right;
+//
+//@each $type in $shadow_types {
+//	.shadow.#{$type} {
+//		@include shadow($type);
+//	}
+//}
+//
+//// Map .shadow, with no other classes applied, to .shadow.lifted
+//$shadow_not_selector: '';
+//@each $type in $shadow_types {
+//	$shadow_not_selector: $shadow_not_selector + ":not(.#{$type})";
+//}
+//.shadow#{unquote($shadow_not_selector)} {
+//	@include shadow(lifted);
+//}

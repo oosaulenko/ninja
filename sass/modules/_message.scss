@@ -1,0 +1,33 @@
+.woocommerce{
+
+  &-message, &-error, &-info{
+    border-left: 2px solid $color;
+    @include span(full);
+    padding: 20px;
+    margin-bottom: 20px;
+
+    &:before{
+      top: 20px;
+    }
+
+    .button{
+      display: none!important;
+    }
+    //border: 0;
+    //@include border-radius(10px);
+    //background-color: #eee;
+    //color: #333;
+  }
+
+  &-message{
+    border-color: $green;
+  }
+
+  &-error{
+    border-color: $red;
+  }
+
+  &-info{
+    //border-color: $color;
+  }
+}

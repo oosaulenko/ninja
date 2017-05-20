@@ -1,0 +1,78 @@
+@charset "utf-8";
+
+body{
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+body.noscroll{
+  overflow: hidden;
+}
+
+body.hidden{
+  overflow: hidden;
+}
+
+body.home{
+  overflow: hidden;
+}
+
+
+body.admin-bar{
+  #l-page{
+    margin-top: 112px;
+  }
+}
+
+#wpadminbar{
+  background-color: darken($color_2, 20);
+}
+
+
+#l{
+
+  &-inner{
+    @include container();
+    //@include pad(1);
+    width: $width_1;
+    position: relative;
+    z-index: 10;
+    overflow: initial;
+  }
+
+  &-page{
+    @include span(full);
+    margin-top: 50px;
+    padding-bottom: 0;
+    padding-left: 65px;
+  }
+
+  &-header{
+    @include span(full);
+    background-color: transparent;
+    position: relative;
+    z-index: map_get($zindex, 'header');
+
+    @include breakpoint($small){
+      height: auto;
+    }
+  }
+
+  &-footer{
+    @include span(full);
+    background-color: #f2f2f2;
+    z-index: map_get($zindex, 'footer');
+    position: relative;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+
+
+    @include breakpoint($small){
+      margin-top: 25px;
+      padding: 20px 0;
+    }
+  }
+}
+
+.inner-table{
+  display: table;
+}

@@ -1,0 +1,78 @@
+// Button settings
+$btn-size:                80px;
+
+@include breakpoint($small){
+  $btn-size: 25px;
+}
+
+$btn-arrowsize:           $btn-size / 4;
+
+// Button colors
+$btn-color:               $white;
+$btn-bg:                  $color_3;
+$btn-border:              $color_3;
+
+// Button hover colors
+$btn-hover-color:         $white;
+$btn-bg-hover:            $color;
+$btn-hover-border-color:  $color;
+
+.slick-arrow, .flickity-prev-next-button {
+  position: absolute;
+  width: $btn-size;
+  height: $btn-size;
+  background: $btn-bg;
+  border: 2px solid $btn-border;
+  border-radius: $btn-size;
+  color: $btn-color;
+  cursor: pointer;
+  //left: 50%;
+  line-height: $btn-size;
+  //margin-left: -($btn-size / 2);
+  transition: all 0.25s ease-in-out;
+  transform: rotate(-90deg);
+  @extend .z-depth-3;
+  margin-top: - $btn-size/2;
+
+  &:hover {
+    background: $btn-bg-hover;
+    border-color: $btn-hover-border-color;
+    color: $btn-hover-color;
+  }
+
+  &:after {
+    position: absolute;
+    display: inline-block;
+    content: "";
+    width: $btn-arrowsize;
+    height: $btn-arrowsize;
+    top: 50%;
+    left: 50%;
+    margin-left: -($btn-arrowsize * .5);
+    margin-top: -($btn-arrowsize * .25);
+    border-top: 2px solid;
+    border-left: 2px solid;
+    transform: rotateZ(45deg);
+
+    @include breakpoint($small){
+      border-width: 1px;
+    }
+  }
+
+  @include breakpoint($small){
+    border-width: 1px;
+  }
+
+  svg{
+    display: none;
+  }
+
+  &.prev, &.previous{
+    left: 25px;
+  }
+
+  &.next{
+    right: 25px;
+    transform: rotate(-270deg);
+  }
+}
