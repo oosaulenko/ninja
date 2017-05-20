@@ -10,6 +10,7 @@
 get_header();
 $main_pages = get_the_ID();
 ?>
+
 <div id="l-page">
     <section class="main_fullpage">
         <section class="section section-1 section-products" data-anchor="products">

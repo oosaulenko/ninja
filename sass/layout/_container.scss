@@ -24,20 +24,38 @@ body.admin-bar{
   }
 }
 
-#wpadminbar{
-  background-color: darken($color_2, 20);
-}
-
-
 #l{
 
   &-inner{
     @include container();
-    //@include pad(1);
     width: $width_1;
     position: relative;
     z-index: 10;
     overflow: initial;
+
+    @include breakpoint($mobile){
+      @include span(full);
+      @include pad(10px);
+    }
+
+    @include breakpoint($tablet){
+      @include span(full);
+      @include pad(15px);
+    }
+
+    @include breakpoint($tablet-1x){
+      @include span(full);
+      @include pad(15px);
+    }
+
+    @include breakpoint($desktop-1x){
+      @include span(full);
+      @include pad(15px);
+    }
+
+    @include breakpoint($desktop-2x){
+      //width: 940px;
+    }
   }
 
   &-page{
@@ -73,6 +91,11 @@ body.admin-bar{
   }
 }
 
-.inner-table{
-  display: table;
+#h{
+  &-inner{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
 }

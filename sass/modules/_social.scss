@@ -18,12 +18,8 @@
     font-size: 28px;
     margin-right: 10px;
     @include border-radius(8px);
-    //width: 30px;
-    //height: 30px;
     display: inline-block;
-    //line-height: 30px;
     text-align: center;
-    //background-color: #676767;
     transition: all 20ms ease 0s;
 
     &:hover{
@@ -53,7 +49,6 @@
     }
 
     &-vk{
-      //background-color: #4771a2;
 
       &:before{
         content: '\F579';
@@ -79,24 +74,18 @@
     }
 
     &-twitter{
-      //background-color: #00abf0;
-
       &:before{
         content: '\F544';
       }
     }
 
     &-google{
-      //background-color: #db4437;
-
       &:before{
         content: '\F2BD';
       }
     }
 
     &-ok{
-      //background-color: #ee8208;
-
       &:before{
         content: '\F3C5';
       }

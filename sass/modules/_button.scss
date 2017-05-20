@@ -54,12 +54,12 @@ $button-font-family: $ff-raleway;
   }
 }
 
+// QUANTITY //
 
 .quantity{
   @include breakpoint($small){
     display: inline-block;
   }
-
 
   .input-number,
   .input-number-decrement,
@@ -97,14 +97,14 @@ $button-font-family: $ff-raleway;
 
     &-decrement{
       border-right: none;
-      border-radius: 15px 0 0 15px;
+      @include border-radius(15px 0 0 15px);
     }
 
     &-increment{
       border-left: none;
-      border-radius: 0 15px 15px 0;
+      @include border-radius(0 15px 15px 0);
     }
   }
-
-
 }
+
+// END QUANTITY //

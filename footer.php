@@ -14,6 +14,7 @@
     <div class="form_modal_block">
         <?php print do_shortcode('[ninja_form id=3]'); ?>
     </div>
+    <div class="modal-close"></div>
 </div>
 
 <script>$('.modal').modal();</script>
