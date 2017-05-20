@@ -4,11 +4,11 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Mudita
+ * @package Mr.OWL
  */
 
 global $post;
-$sidebar_layout = get_post_meta( $post->ID, 'mudita_sidebar_layout', true );
+$sidebar_layout = get_post_meta( $post->ID, 'mrowl_sidebar_layout', true );
 
 ?>
 

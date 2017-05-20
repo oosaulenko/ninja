@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Mudita
+ * @package Mr.OWL
  */
 ?>
 
@@ -16,15 +16,8 @@
     </div>
 </div>
 
-<footer id="l-footer">
-    <div id="l-inner">
+<script>$('.modal').modal();</script>
 
-    </div>
-</footer>
-
-<script>
-    $('.modal').modal();
-</script>
 <?php wp_footer(); ?>
 </body>
 </html>

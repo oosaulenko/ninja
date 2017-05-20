@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Mudita
+ * @package Mr.OWL
  */
 
 get_header();
@@ -130,16 +130,8 @@ $main_pages = get_the_ID();
 
                 if( have_rows('sale_gallery', 135) ):
                     while ( have_rows('sale_gallery', 135) ) : the_row(); ?>
-
-                        <div class="slide-item" style="background-image: url('<?php the_sub_field('desc_image'); ?>');">
-<!--                            <img src="--><?php //the_sub_field('desc_image'); ?><!--" alt="">-->
-                        </div>
-
+                        <div class="slide-item" style="background-image: url('<?php the_sub_field('desc_image'); ?>');"></div>
                     <?php endwhile;
-                else :
-
-                    // no rows found
-
                 endif;
                 ?>
             </div>
@@ -152,11 +144,7 @@ $main_pages = get_the_ID();
 
         <section class="section section-3 section-random" data-anchor="random">
             <div class="block_random" style="background-image: url('<?php print $src_image_about[0]; ?>');">
-                <div class="block_image">
-                    <div id="l-inner">
-                        <!--                        <img src="--><?php //print get_template_directory_uri(); ?><!--/img/pizzarandom.png" alt="">-->
-                    </div>
-                </div>
+                <div class="block_image"></div>
                 <div class="block_info">
                     <div id="l-inner">
                         <div class="info_random">
@@ -185,7 +173,6 @@ $main_pages = get_the_ID();
                 </div>
             </div>
         </section>
-<!--        --><?php //} ?>
 
         <?php
         $src_image_about = get_post_meta( 18, 'construct_image', true );
@@ -205,7 +192,6 @@ $main_pages = get_the_ID();
                         <a href="<?php print the_permalink(33);?>" class="button">Перейти к конструктору</a>
                         <div class="bottom"></div>
                     </div>
-                    <!--                    <div class="image"></div>-->
                 </div>
             </div>
         </section>
@@ -224,9 +210,9 @@ $main_pages = get_the_ID();
                     <?php
                     $current_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
                     $params = array(
-                        'posts_per_page' => 10, // количество постов на странице
-                        'post_type'       => 'post_reviews', // тип постов
-                        'paged'           => $current_page // текущая страница
+                        'posts_per_page' => 10,
+                        'post_type'       => 'post_reviews',
+                        'paged'           => $current_page
                     );
                     query_posts($params);
 
@@ -273,40 +259,29 @@ $main_pages = get_the_ID();
         dots: false
     });
 
-    $('.block_sale').slick({
-
-    });
+    $('.block_sale').slick();
 
     $(document).ready(function() {
         $('.main_fullpage').fullpage({
 
             afterLoad: function(anchorLink, index){
-//                alert(anchorLink);
                var title = $('.section-' + index).find('.title_section');
                var info = $('.section-' + index).find('.info');
-//               var buttons = $('.section-' + index).find('.button');
 
                 setTimeout(function(){ title.addClass('title_section-active'); }, 0);
                 setTimeout(function(){ title.children('b').addClass('active'); }, 0);
                 setTimeout(function(){ title.children('span').addClass('active'); }, 20);
 
                 setTimeout(function(){ info.addClass('info-active'); }, 40);
-//                setTimeout(function(){ buttons.addClass('button-actives'); }, 80);
-
-//               var anchorLinkMain = anchorLink;
             },
             onLeave: function(index, nextIndex, direction){
                 var title = $('.section-' + index).find('.title_section');
                 var info = $('.section-' + index).find('.info');
-//                var buttons = $('.section-' + index).find('.button');
 
                 title.removeClass('title_section-active');
                 title.children('b').removeClass('active');
                 title.children('span').removeClass('active');
-
-
                 info.removeClass('info-active');
-//                buttons.removeClass('button-actives');
             },
             onSlideLeave : function(anchorLink, index, slideIndex, direction, nextSlideIndex){
                 alert(anchorLink + index + slideIndex);
@@ -315,6 +290,5 @@ $main_pages = get_the_ID();
     });
 </script>
 
-<script src="http://ninja.com.ua/wp-content/plugins/wc-variations-radio-buttons/assets/js/frontend/add-to-cart-variation.js?ver=2.0.0"></script>
-
+<!--<script src="http://ninja.com.ua/wp-content/plugins/wc-variations-radio-buttons/assets/js/frontend/add-to-cart-variation.js?ver=2.0.0"></script>-->
 <?php get_footer(); ?>

@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Mudita
+ * @package Mr.OWL
  */
 
 ?>
@@ -19,6 +19,6 @@
 	</div><!-- .entry-summary -->
 
 	<footer class="entry-footer">
-		<a href="<?php the_permalink(); ?>" class="readmore"><?php esc_html_e( 'Read More', 'mudita' ); ?></a>
+		<a href="<?php the_permalink(); ?>" class="readmore"><?php esc_html_e( 'Read More', 'mrowl' ); ?></a>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

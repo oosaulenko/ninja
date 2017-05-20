@@ -7,7 +7,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Mudita
+ * @package Mr.OWL
  */
 
 /*
@@ -26,20 +26,20 @@ if ( post_password_required() ) {
         $commenter = wp_get_current_commenter();
         $req = get_option( 'require_name_email' );
         $aria_req = ( $req ? " aria-required='true'" : '' );
-        $required_text = __( 'Required fields are marked', 'mudita' );
+        $required_text = __( 'Required fields are marked', 'mrowl' );
 
         $fields =  array(
 
           'author' =>
-            '<p class="comment-form-author"><input id="author" name="author" placeholder="' . __( 'Name*', 'mudita' ) . '" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
+            '<p class="comment-form-author"><input id="author" name="author" placeholder="' . __( 'Name*', 'mrowl' ) . '" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
             '" size="30"' . $aria_req . ' /></p>',
 
           'email' =>
-            '<p class="comment-form-email"><input id="email" name="email" placeholder="' . __( 'Email*', 'mudita' ) . '" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+            '<p class="comment-form-email"><input id="email" name="email" placeholder="' . __( 'Email*', 'mrowl' ) . '" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
             '" size="30"' . $aria_req . ' /></p>',
 
           'url' =>
-            '<p class="comment-form-url"><input id="url" name="url" placeholder="' . __( 'Website', 'mudita' ) . '" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .
+            '<p class="comment-form-url"><input id="url" name="url" placeholder="' . __( 'Website', 'mrowl' ) . '" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .
             '" size="30" /></p>',
         );
 
@@ -50,31 +50,31 @@ if ( post_password_required() ) {
 			'class_submit'      => 'submit',
 			'name_submit'       => 'submit',
 			'submit_button' 	=> '<input name="%1$s" type="submit" id="%2$s" class="waves-effect waves-light %3$s" value="%4$s" />',
-			'title_reply'       => __( 'Комментарии', 'mudita' ),
-			'title_reply_to'    => __( 'Leave a Reply to %s', 'mudita' ),
-			'cancel_reply_link' => __( 'Cancel Reply', 'mudita' ),
-			'label_submit'      => __( 'Отправить', 'mudita' ),
+			'title_reply'       => __( 'Комментарии', 'mrowl' ),
+			'title_reply_to'    => __( 'Leave a Reply to %s', 'mrowl' ),
+			'cancel_reply_link' => __( 'Cancel Reply', 'mrowl' ),
+			'label_submit'      => __( 'Отправить', 'mrowl' ),
 			'format'            => 'xhtml',
 
-          'comment_field' =>  '<div class="comment-form-comment"><textarea id="comment" name="comment" placeholder="' . __( 'Добавить комментарий...', 'mudita' ) . '" cols="45" rows="8" aria-required="true">' .
+          'comment_field' =>  '<div class="comment-form-comment"><textarea id="comment" name="comment" placeholder="' . __( 'Добавить комментарий...', 'mrowl' ) . '" cols="45" rows="8" aria-required="true">' .
             '</textarea></div>',
 
           'must_log_in' => '<p class="must-log-in">' .
             sprintf(
-              __( 'You must be <a href="%s">logged in</a> to post a comment.', 'mudita' ),
+              __( 'You must be <a href="%s">logged in</a> to post a comment.', 'mrowl' ),
               wp_login_url( apply_filters( 'the_permalink', get_permalink() ) )
             ) . '</p>',
 
           'logged_in_as' => '' .
             sprintf(
-            __('', 'mudita' ),
+            __('', 'mrowl' ),
               admin_url( 'profile.php' ),
               $user_identity,
               wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) )
             ) . '',
 
           'comment_notes_before' => '<p class="comment-notes"><span class="email-notes">' .
-            __( 'Your email address will not be published. ', 'mudita' ) . '</span>' . ( $req ? $required_text : '' ) .
+            __( 'Your email address will not be published. ', 'mrowl' ) . '</span>' . ( $req ? $required_text : '' ) .
             '<span class="required">*</span></p>',
 
           'comment_notes_after' => '',
@@ -91,7 +91,7 @@ if ( post_password_required() ) {
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) : ?>
 		<h2 class="comments-title">
-			<?php esc_html_e( '', 'mudita' ); ?>
+			<?php esc_html_e( '', 'mrowl' ); ?>
 		</h2>
 
 		<ol class="comment-list">
@@ -99,7 +99,7 @@ if ( post_password_required() ) {
 			wp_list_comments( array(
 				'style'      => 'ul',
 				'short_ping' => true,
-				'callback'   => 'mudita_theme_comment',
+				'callback'   => 'mrowl_theme_comment',
 				'avatar_size'=> null,
 				'reverse_top_level'=> true,
 				'max_depth' => 0
@@ -109,11 +109,11 @@ if ( post_password_required() ) {
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
 			<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
-				<h2 class="screen-reader-text"><?php esc_html_e( '', 'mudita' ); ?></h2>
+				<h2 class="screen-reader-text"><?php esc_html_e( '', 'mrowl' ); ?></h2>
 				<div class="nav-links">
 
-					<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'mudita' ) ); ?></div>
-					<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'mudita' ) ); ?></div>
+					<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'mrowl' ) ); ?></div>
+					<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'mrowl' ) ); ?></div>
 
 				</div><!-- .nav-links -->
 			</nav><!-- #comment-nav-below -->
@@ -126,7 +126,7 @@ if ( post_password_required() ) {
 	// If comments are closed and there are comments, let's leave a little note, shall we?
 	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
 
-		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'mudita' ); ?></p>
+		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'mrowl' ); ?></p>
 		<?php
 	endif;
 	?>

@@ -1,13 +1,13 @@
 <?php
 /**
- * Mudita functions and definitions.
+ * Mr.OWL functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Mudita
+ * @package Mr.OWL
  */
 
-if ( ! function_exists( 'mudita_setup' ) ) :
+if ( ! function_exists( 'mrowl_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -15,14 +15,14 @@ if ( ! function_exists( 'mudita_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function mudita_setup() {
+function mrowl_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on Mudita, use a find and replace
-	 * to change 'mudita' to the name of your theme in all the template files.
+	 * If you're building a theme based on Mr.OWL, use a find and replace
+	 * to change 'mrowl' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'mudita', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'mrowl', get_template_directory() . '/languages' );
     
     // Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -44,8 +44,8 @@ function mudita_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', 'mudita' ),
-        'secondary' => esc_html__( 'Secondary', 'mudita' ),
+		'primary' => esc_html__( 'Primary', 'mrowl' ),
+        'secondary' => esc_html__( 'Secondary', 'mrowl' ),
 	) );
 
 	/*
@@ -75,19 +75,9 @@ function mudita_setup() {
         'audio',
         'chat'
 	) );
-
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'mudita_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
     
     // Custom Image Sizes
-    add_image_size( 'mrowl_youtube', 437, 341, true );
-    add_image_size( 'mrowl_review', 175, 175, true );
-    add_image_size( 'mrowl_princess', 410, 630, true );
-    add_image_size( 'mrowl_blog', 302, 500, true );
-    add_image_size( 'mrowl_blog_prev', 528, 629, false );
+//    add_image_size( 'mrowl_youtube', 437, 341, true );
 
     /* Custom Logo */
     add_theme_support( 'custom-logo', array(
@@ -98,7 +88,7 @@ function mudita_setup() {
     
 }
 endif;
-add_action( 'after_setup_theme', 'mudita_setup' );
+add_action( 'after_setup_theme', 'mrowl_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -107,48 +97,10 @@ add_action( 'after_setup_theme', 'mudita_setup' );
  *
  * @global int $content_width
  */
-function mudita_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'mudita_content_width', 780 );
+function mrowl_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'mrowl_content_width', 780 );
 }
-add_action( 'after_setup_theme', 'mudita_content_width', 0 );
-
-/**
-* Adjust content_width value according to template.
-*
-* @return void
-*/
-function mudita_template_redirect_content_width() {
-
-	// Full Width in the absence of sidebar.
-	if( is_page() ){
-	   $sidebar_layout = mudita_sidebar_layout();
-       if( ( $sidebar_layout == 'no-sidebar' ) || ! ( is_active_sidebar( 'right-sidebar' ) ) ) $GLOBALS['content_width'] = 1200;
-        
-	}elseif ( ! ( is_active_sidebar( 'right-sidebar' ) ) ) {
-		$GLOBALS['content_width'] = 1200;
-	}
-
-}
-add_action( 'template_redirect', 'mudita_template_redirect_content_width' );
-
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function mudita_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Right Sidebar', 'mudita' ),
-		'id'            => 'right-sidebar',
-		'description'   => '',
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-
-}
-add_action( 'widgets_init', 'mudita_widgets_init' );
+add_action( 'after_setup_theme', 'mrowl_content_width', 0 );
 
 /**
  * Enqueue scripts and styles.
@@ -159,22 +111,16 @@ function mrowl_scripts() {
 	wp_enqueue_script( 'jquery', 'https://code.jquery.com/jquery-2.1.3.min.js');
 	wp_enqueue_script( 'jquery-migrate', '//code.jquery.com/jquery-migrate-1.2.1.min.js');
 	wp_enqueue_script('jquery');
-	wp_enqueue_style( 'mudita-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'mrowl-style', get_stylesheet_uri() );
 
-	//wp_enqueue_script( 'mudita-ie', get_template_directory_uri() . '/js/ie.js', array('jquery'), '3.7.2', true );
 	wp_enqueue_script( 'mrowl-slick', get_template_directory_uri() . '/js/slick.min.js', array('jquery'), '1.6.0', false );
 	wp_enqueue_script( 'mrowl-materialize', 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js', array('jquery'), '0.97.7', false );
 	wp_enqueue_script( 'mrowl-menu', get_template_directory_uri() . '/js/menu.js', array('jquery'), '1.0.0', true );
     wp_enqueue_script( 'mrowl-easings', get_template_directory_uri() . '/js/jquery.easings.min.js', array('jquery'), '1.9.2', false );
     wp_enqueue_script( 'mrowl-scrolloverflow', get_template_directory_uri() . '/js/scrolloverflow.min.js', array('jquery'), '5.2.0', false );
     wp_enqueue_script( 'mrowl-fullpage', get_template_directory_uri() . '/js/jquery.fullPage.min.js', array('jquery'), '2.9.3', false );
-//    wp_enqueue_script( 'mrowl-owlcarousel', get_template_directory_uri() . '/owlcarousel/owl.carousel.min.js', array('jquery'), '2.2.1', false );
     wp_enqueue_script( 'mrowl-flickity', get_template_directory_uri() . '/js/flickity.pkgd.min.js', array('jquery'), '2.0.5', true );
     wp_enqueue_script( 'mrowl-numeric', get_template_directory_uri() . '/js/numeric.js', array('jquery'), '1.0.0', true );
-
-//    global $woocommerce;
-//    wp_enqueue_script( 'wc-add-to-cart-variation', $woocommerce->plugin_url() . '/assets/js/frontend/add-to-cart-variation.js', array('jquery'), '2.0.0', false );
-
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -185,50 +131,50 @@ add_action( 'wp_enqueue_scripts', 'mrowl_scripts' );
 /**
  * Enqueue Admin Scripts
 */
-function mudita_admin_scripts(){
-    wp_enqueue_style( 'mudita-admin-style', get_template_directory_uri() . '/css/admin.css' );
+function mrowl_admin_scripts(){
+    wp_enqueue_style( 'mrowl-admin-style', get_template_directory_uri() . '/css/admin.css' );
 }
-add_action( 'admin_enqueue_scripts', 'mudita_admin_scripts' );
+add_action( 'admin_enqueue_scripts', 'mrowl_admin_scripts' );
 
 /**
  * Custom template tags for this theme.
  */
-require get_template_directory() . '/inc/template-tags.php';
+//require get_template_directory() . '/inc/template-tags.php';
 
 /**
  * Custom functions that act independently of the theme templates.
  */
-require get_template_directory() . '/inc/extras.php';
+//require get_template_directory() . '/inc/extras.php';
 
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+//require get_template_directory() . '/inc/customizer.php';
 
 /**
  * Load Jetpack compatibility file.
  */
-require get_template_directory() . '/inc/jetpack.php';
+//require get_template_directory() . '/inc/jetpack.php';
 
 /**
  * Meta Box
  */
-require get_template_directory() . '/inc/metabox.php';
+//require get_template_directory() . '/inc/metabox.php';
 
 /**
  * Widget Featured Post
  */
-require get_template_directory() . '/inc/widget-featured-post.php';
+//require get_template_directory() . '/inc/widget-featured-post.php';
 
 /**
  * Widget Recent Post
  */
-require get_template_directory() . '/inc/widget-recent-post.php';
+//require get_template_directory() . '/inc/widget-recent-post.php';
 
 /**
  * Widget Popular Post
  */
-require get_template_directory() . '/inc/widget-popular-post.php';
+//require get_template_directory() . '/inc/widget-popular-post.php';
 
 error_reporting('^ E_ALL ^ E_NOTICE');
 ini_set('display_errors', '0');

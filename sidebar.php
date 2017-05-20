@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Mudita
+ * @package Mr.OWL
  */
 
 if ( ! is_active_sidebar( 'right-sidebar' ) || is_search() ) {
@@ -12,6 +12,4 @@ if ( ! is_active_sidebar( 'right-sidebar' ) || is_search() ) {
 }
 ?>
 
-<aside id="secondary" class="widget-area" role="complementary">
-	<?php dynamic_sidebar( 'right-sidebar' ); ?>
-</aside><!-- #secondary -->
+<aside id="secondary" class="widget-area" role="complementary"></aside><!-- #secondary -->

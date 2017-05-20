@@ -9,10 +9,10 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Mudita
+ * @package Mr.OWL
  */
 
-$sidebar_layout = mudita_sidebar_layout();
+$sidebar_layout = mrowl_sidebar_layout();
 
 get_header(); ?>
 	<div id="l-page">

@@ -9,7 +9,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Mudita
+ * @package Mr.OWL
  */
 
 get_header(); ?>
@@ -35,7 +35,7 @@ get_header(); ?>
             the_posts_pagination( array(
     	        'prev_text'          => '<span class="fa fa-angle-double-left"></span>',
     	        'next_text'          => '<span class="fa fa-angle-double-right"></span>',
-    	        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'mudita' ) . ' </span>',
+    	        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'mrowl' ) . ' </span>',
              ) );
          
 		else :

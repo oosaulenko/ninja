@@ -4,12 +4,12 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Mudita
+ * @package Mr.OWL
  */
 
 get_header();
 
-    $enabled_sections = mudita_get_sections();
+    $enabled_sections = mrowl_get_sections();
     
     if( $enabled_sections ) echo '<div id="next_section"></div>';
     

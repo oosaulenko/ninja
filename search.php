@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package Mudita
+ * @package Mr.OWL
  */
 
 global $wp_query;
@@ -18,8 +18,8 @@ get_header(); ?>
 		if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Search Result', 'mudita' ); ?></h1>
-                <h2 class="count"><?php echo $wp_query->found_posts . __( ' result for: ', 'mudita' ) . get_search_query(); ?></h2>
+				<h1 class="page-title"><?php esc_html_e( 'Search Result', 'mrowl' ); ?></h1>
+                <h2 class="count"><?php echo $wp_query->found_posts . __( ' result for: ', 'mrowl' ) . get_search_query(); ?></h2>
 			</header><!-- .page-header -->
 
 			<?php
@@ -39,7 +39,7 @@ get_header(); ?>
 			the_posts_pagination( array(
     	        'prev_text'          => '<span class="fa fa-angle-double-left"></span>',
     	        'next_text'          => '<span class="fa fa-angle-double-right"></span>',
-    	        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'mudita' ) . ' </span>',
+    	        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'mrowl' ) . ' </span>',
              ) );
 
 		else :
