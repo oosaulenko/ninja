@@ -48,7 +48,7 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
 			</div>
 		</div>
 
-		<?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
+<!--		--><?php //do_action( 'woocommerce_checkout_after_customer_details' ); ?>
 
 	<?php endif; ?>
 

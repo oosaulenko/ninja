@@ -241,6 +241,18 @@
             display: inline-block;
           }
 
+          [type="radio"]:not(:checked) + label:before, [type="radio"]:not(:checked) + label:after{
+            border-color: $color;
+          }
+
+          [type="radio"]:checked + label:after, [type="radio"].with-gap:checked + label:before, [type="radio"].with-gap:checked + label:after{
+            border-color: $color;
+          }
+
+          [type="radio"]:checked + label:after, [type="radio"].with-gap:checked + label:after{
+            background-color: $color;
+          }
+
           input{
             float: left;
             margin-right: 17px;
@@ -506,11 +518,40 @@
           }
         }
 
+        .variations_form{
+
+          .quantity{
+            display: none;
+          }
+
+          .single_add_to_cart_button{
+            display: none;
+          }
+        }
+
         .button{
           height: 48px;
           padding: 0 55px;
           float: right;
           @include border-radius(24px);
+
+          &:disabled{
+            background-color: $color;
+            padding: 0 20px;
+          }
+
+          &.buttonRandomFinish{
+            background-color: $color_2;
+          }
+
+          p{
+            float: left;
+            width: 100px;
+
+            &:first-of-type{
+              margin-right: 10px;
+            }
+          }
         }
       }
     }

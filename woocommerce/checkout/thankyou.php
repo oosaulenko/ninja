@@ -39,20 +39,20 @@ if ( $order ) : ?>
 
 		<ul class="woocommerce-thankyou-order-details order_details">
 			<li class="order">
-				<span><?php _e( 'Order Number:', 'woocommerce' ); ?></span>
+				<?php _e( 'Order Number:', 'woocommerce' ); ?>
 				<strong><?php echo $order->get_order_number(); ?></strong>
 			</li>
 			<li class="date">
-				<span><?php _e( 'Date:', 'woocommerce' ); ?></span>
+				<?php _e( 'Date:', 'woocommerce' ); ?>
 				<strong><?php echo date_i18n( get_option( 'date_format' ), strtotime( $order->order_date ) ); ?></strong>
 			</li>
 			<li class="total">
-				<span><?php _e( 'Total:', 'woocommerce' ); ?></span>
+				<?php _e( 'Total:', 'woocommerce' ); ?>
 				<strong><?php echo $order->get_formatted_order_total(); ?></strong>
 			</li>
 			<?php if ( $order->payment_method_title ) : ?>
 			<li class="method">
-				<span><?php _e( 'Payment Method:', 'woocommerce' ); ?></span>
+				<?php _e( 'Payment Method:', 'woocommerce' ); ?>
 				<strong><?php echo $order->payment_method_title; ?></strong>
 			</li>
 			<?php endif; ?>
@@ -61,8 +61,8 @@ if ( $order ) : ?>
 
 	<?php endif; ?>
 
-<!--	--><?php //do_action( 'woocommerce_thankyou_' . $order->payment_method, $order->id ); ?>
-<!--	--><?php //do_action( 'woocommerce_thankyou', $order->id ); ?>
+	<?php do_action( 'woocommerce_thankyou_' . $order->payment_method, $order->id ); ?>
+	<?php do_action( 'woocommerce_thankyou', $order->id ); ?>
 
 <?php else : ?>
 

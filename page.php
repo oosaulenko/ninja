@@ -12,7 +12,7 @@
  * @package Mr.OWL
  */
 
-$sidebar_layout = mrowl_sidebar_layout();
+//$sidebar_layout = mrowl_sidebar_layout();
 
 get_header(); ?>
 	<div id="l-page">

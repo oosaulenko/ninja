@@ -111,7 +111,3 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	</tfoot>
 </table>
-<div class="shop_table woocommerce-checkout-review-order-table-finish">
-	<div class="name">Итого</div>
-	<div class="info"><?php wc_cart_totals_subtotal_html(); ?></div>
-</div>

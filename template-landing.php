@@ -8,7 +8,7 @@
  */
 
 get_header();
-$main_pages = get_the_ID();
+//$main_pages = get_the_ID();
 ?>
 
 <div id="l-page">
@@ -25,13 +25,15 @@ $main_pages = get_the_ID();
                 $paramss = array(
                     'posts_per_page'    => 12,
                     'post_type'         => 'product',
-//                    'orderby'           => 'rand',
-//                    'category_name'     => 'main',
-                    'order' => 'ASC'
+//                    'orderby'           => 'ID',
+                    'product_cat'    => 'main'
+//                    'tag_id'     => 14,
+//                    'order' => 'DESC'
                 );
-                query_posts($paramss);
 
-                while(have_posts()): the_post(); ?>
+                $query = new WP_Query($paramss);
+
+                while($query->have_posts()): $query->the_post(); ?>
                     <?php
                     global $product;
 
@@ -77,15 +79,15 @@ $main_pages = get_the_ID();
                                        foreach ($variables as $key => $variable){
                                            ?>
                                            <div class="view-item">
+                                               <?php if($key == 0): ?>
+                                                   <input type="radio" class="typePizza with-gap" id="typePizza_<?php print $variable['variation_id']; ?>" name="typePizza_<?php print $post->ID; ?>" value="<?php print $variable['variation_id']; ?>" checked>
+                                                   <?php
+                                                   $variable_default = $variable['variation_id'];
+                                                   ?>
+                                               <?php else: ?>
+                                                   <input type="radio" class="typePizza with-gap" id="typePizza_<?php print $variable['variation_id']; ?>" name="typePizza_<?php print $post->ID; ?>" value="<?php print $variable['variation_id']; ?>">
+                                               <?php endif; ?>
                                                <label for="typePizza_<?php print $variable['variation_id']; ?>">
-                                                   <?php if($key == 0): ?>
-                                                       <input type="radio" class="typePizza" id="typePizza_<?php print $variable['variation_id']; ?>" name="typePizza_<?php print $post->ID; ?>" value="<?php print $variable['variation_id']; ?>" checked>
-                                                       <?php
-                                                       $variable_default = $variable['variation_id'];
-                                                       ?>
-                                                       <?php else: ?>
-                                                       <input type="radio" class="typePizza" id="typePizza_<?php print $variable['variation_id']; ?>" name="typePizza_<?php print $post->ID; ?>" value="<?php print $variable['variation_id']; ?>">
-                                                   <?php endif; ?>
                                                    <span class="dimensions"><?php print str_replace("cm", "<b>см</b>", $variable['dimensions']); ?></span>
                                                    <span class="weight"><?php print str_replace("g", "<b>гр.</b>", $variable['weight']); ?></span>
                                                    <span class="display_price"><b><?php print $variable['display_price']; ?></b> грн.</span>
@@ -142,7 +144,6 @@ $main_pages = get_the_ID();
         $meta_values = get_post_meta( 18, 'random_image', true );
         $src_image_about = wp_get_attachment_image_src($meta_values, 'full');
         ?>
-
         <section class="section section-3 section-random" data-anchor="random">
             <div class="block_random" style="background-image: url('<?php print $src_image_about[0]; ?>');">
                 <div class="block_image"></div>
@@ -162,10 +163,10 @@ $main_pages = get_the_ID();
                                     <input type="number" step="1" min="1" max="" name="quantity" value="1" title="Кол-во" class="input-text qty text input-number" size="4" pattern="[0-9]*" inputmode="numeric">
                                     <span class="input-number-increment">+</span>
                                 </div>
-                                <input type="hidden" name="add-to-cart" class="productIDhidden" value="127">
-                                <button type="submit" class="single_add_to_cart_button button alt">Получить рандомную пиццу</button>
+                                <input type="hidden" name="add-to-cart" class="productIDhiddenRandom" value="0">
+                                <button type="submit" class="single_add_to_cart_button button alt" id="buttonRandomHidden">Получить рандомную пиццу</button>
                             </form>
-<!--                            <button class="button">Получить рандомную пиццу</button>-->
+                            <button class="button alt" id="buttonRandom">Получить рандомную пиццу</button>
                         </div>
                     </div>
                 </div>
@@ -240,56 +241,4 @@ $main_pages = get_the_ID();
     </section>
 </div>
 
-<script>
-
-    $(document).ready(function(){
-        $('.block_products').flickity({
-            groupCells: 2,
-            pageDots: false,
-            selectedAttraction: 0.01,
-            friction: 0.15,
-            imagesLoaded: true,
-            percentPosition: false,
-            wrapAround: true
-        });
-    });
-
-    $('.block_reviews').slick({
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        dots: false
-    });
-
-    $('.block_sale').slick();
-
-    $(document).ready(function() {
-        $('.main_fullpage').fullpage({
-
-            afterLoad: function(anchorLink, index){
-               var title = $('.section-' + index).find('.title_section');
-               var info = $('.section-' + index).find('.info');
-
-                setTimeout(function(){ title.addClass('title_section-active'); }, 0);
-                setTimeout(function(){ title.children('b').addClass('active'); }, 0);
-                setTimeout(function(){ title.children('span').addClass('active'); }, 20);
-
-                setTimeout(function(){ info.addClass('info-active'); }, 40);
-            },
-            onLeave: function(index, nextIndex, direction){
-                var title = $('.section-' + index).find('.title_section');
-                var info = $('.section-' + index).find('.info');
-
-                title.removeClass('title_section-active');
-                title.children('b').removeClass('active');
-                title.children('span').removeClass('active');
-                info.removeClass('info-active');
-            },
-            onSlideLeave : function(anchorLink, index, slideIndex, direction, nextSlideIndex){
-                alert(anchorLink + index + slideIndex);
-            }
-        });
-    });
-</script>
-
-<!--<script src="http://ninja.com.ua/wp-content/plugins/wc-variations-radio-buttons/assets/js/frontend/add-to-cart-variation.js?ver=2.0.0"></script>-->
 <?php get_footer(); ?>

@@ -39,13 +39,3 @@ $(document).click( function(event){
         }());
     });
 // });
-
-$( ".typePizza" ).on( "change", function () {
-    var valueID = $(this);
-    var blockInfoProduct = valueID.parents('.block_info');
-    var productIDhidden = blockInfoProduct.find('.productIDhidden');
-
-    // alert(productIDhidden.val());
-
-    productIDhidden.val(valueID.val());
-} );

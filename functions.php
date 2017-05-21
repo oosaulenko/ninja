@@ -121,6 +121,7 @@ function mrowl_scripts() {
     wp_enqueue_script( 'mrowl-fullpage', get_template_directory_uri() . '/js/jquery.fullPage.min.js', array('jquery'), '2.9.3', false );
     wp_enqueue_script( 'mrowl-flickity', get_template_directory_uri() . '/js/flickity.pkgd.min.js', array('jquery'), '2.0.5', true );
     wp_enqueue_script( 'mrowl-numeric', get_template_directory_uri() . '/js/numeric.js', array('jquery'), '1.0.0', true );
+    wp_enqueue_script( 'mrowl-main', get_template_directory_uri() . '/js/main.js', array('jquery'), '1.0.0', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -228,11 +229,9 @@ function cutString($string, $maxlen) {
 }
 
 function woo_remove_product_tab($tabs) {
-
     unset( $tabs['description'] );              // Remove the description tab
     unset( $tabs['reviews'] );                     // Remove the reviews tab
     unset( $tabs['additional_information'] );      // Remove the additional information tab
-
     return $tabs;
 }
 add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tab', 98);
@@ -247,8 +246,8 @@ function custom_login_redirect( $redirect_to ) {
 	$redirect_to = '/checkout';
 }
 
-add_action( 'init', 'custom_fix_thumbnail' );
 
+add_action( 'init', 'custom_fix_thumbnail' );
 function custom_fix_thumbnail() {
 	add_filter('woocommerce_placeholder_img_src', 'custom_woocommerce_placeholder_img_src');
 
@@ -256,33 +255,22 @@ function custom_fix_thumbnail() {
 		$upload_dir = wp_upload_dir();
 		$uploads = untrailingslashit( $upload_dir['baseurl'] );
 		$src = $uploads . '/2017/01/noimage.png';
-
 		return $src;
 	}
 }
 
 add_filter( 'woocommerce_currencies', 'add_my_currency' );
-
 function add_my_currency( $currencies ) {
-
     $currencies['UAH'] = __( 'Українська гривня', 'woocommerce' );
-
     return $currencies;
-
 }
 
 add_filter('woocommerce_currency_symbol', 'add_my_currency_symbol', 10, 2);
-
 function add_my_currency_symbol( $currency_symbol, $currency ) {
-
     switch( $currency ) {
-
         case 'UAH': $currency_symbol = 'грн'; break;
-
     }
-
     return $currency_symbol;
-
 }
 
 add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
@@ -307,108 +295,59 @@ function prefix_ajax_add_foobar() {
 
 remove_action('wp_head','xoo_cp_popup');
 
- add_filter( 'woocommerce_loop_add_to_cart_link', 'woo_display_variation_dropdown_on_shop_page' );
 
-function woo_display_variation_dropdown_on_shop_page() {
-
-    if ( ! function_exists( 'print_attribute_radio' ) ) {
-        function print_attribute_radio( $checked_value, $value, $label, $name ) {
-            // This handles < 2.4.0 bw compatibility where text attributes were not sanitized.
-            $checked = sanitize_title( $checked_value ) === $checked_value ? checked( $checked_value, sanitize_title( $value ), false ) : checked( $checked_value, $value, false );
-
-            $input_name = 'attribute_' . esc_attr( $name ) ;
-            $esc_value = esc_attr( $value );
-            $id = esc_attr( $name . '_v_' . $value );
-            $filtered_label = apply_filters( 'woocommerce_variation_option_name', $label );
-            printf( '<div><input type="radio" name="%1$s" value="%2$s" id="%3$s" %4$s><label for="%3$s">%5$s</label></div>', $input_name, $esc_value, $id, $checked, $filtered_label );
-        }
-    }
-
-    global $product;
-
-    if( $product->is_type( 'variable' )) {
-
-        $attribute_keys = array_keys( $product->get_attributes() );
-        ?>
-
-        <form class="variations_form cart" method="post" enctype='multipart/form-data' data-product_id="<?php echo absint( $product->id ); ?>" data-product_variations="<?php echo htmlspecialchars( json_encode( $product->get_available_variations() ) ) ?>">
-            <?php do_action( 'woocommerce_before_variations_form' ); ?>
-
-            <?php if ( empty( $product->get_available_variations() ) && false !== $product->get_available_variations() ) : ?>
-                <p class="stock out-of-stock"><?php _e( 'This product is currently out of stock and unavailable.', 'woocommerce' ); ?></p>
-            <?php else : ?>
-                <table class="variations" cellspacing="0">
-                    <tbody>
-                    <?php foreach ( $product->get_attributes() as $name => $options ) : ?>
-                        <tr>
-                            <td class="label"><label for="<?php echo sanitize_title( $name ); ?>"><?php echo wc_attribute_label( $name ); ?></label></td>
-                            <?php
-                            $sanitized_name = sanitize_title( $name );
-                            if ( isset( $_REQUEST[ 'attribute_' . $sanitized_name ] ) ) {
-                                $checked_value = $_REQUEST[ 'attribute_' . $sanitized_name ];
-                            } elseif ( isset( $selected_attributes[ $sanitized_name ] ) ) {
-                                $checked_value = $selected_attributes[ $sanitized_name ];
-                            } else {
-                                $checked_value = '';
-                            }
-                            ?>
-                            <td class="value">
-                                <?php
-                                if ( ! empty( $options ) ) {
-                                    if ( taxonomy_exists( $name ) ) {
-                                        // Get terms if this is a taxonomy - ordered. We need the names too.
-                                        $terms = wc_get_product_terms( $product->id, $name, array( 'fields' => 'all' ) );
-
-                                        foreach ( $terms as $term ) {
-//                                            if ( ! in_array( $term->slug, $options ) ) {
-//                                                continue;
-//                                            }
-                                            print_attribute_radio( $checked_value, $term->slug, $term->name, $sanitized_name );
-                                        }
-                                    } else {
-                                        foreach ( $options as $option ) {
-                                            print_attribute_radio( $checked_value, $option, $option, $sanitized_name );
-                                        }
-                                    }
-                                }
-
-                                echo end( $attribute_keys ) === $name ? apply_filters( 'woocommerce_reset_variations_link', '<a class="reset_variations" href="#">' . __( 'Clear', 'woocommerce' ) . '</a>' ) : '';
-                                ?>
-                            </td>
-                        </tr>
-                    <?php endforeach; ?>
-                    </tbody>
-                </table>
-
-                <?php do_action( 'woocommerce_before_add_to_cart_button' ); ?>
-
-                <div class="single_variation_wrap">
-                    <?php
-                    do_action( 'woocommerce_before_single_variation' );
-
-                    do_action( 'woocommerce_single_variation' );
-
-                    do_action( 'woocommerce_after_single_variation' );
-                    ?>
-                </div>
-
-                <?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
-            <?php endif; ?>
-
-            <?php do_action( 'woocommerce_after_variations_form' ); ?>
-        </form>
-
-    <?php } else {
-
-        echo sprintf( '<a rel="nofollow" href="%s" data-quantity="%s" data-product_id="%s" data-product_sku="%s" class="%s">%s</a>',
-            esc_url( $product->add_to_cart_url() ),
-            esc_attr( isset( $quantity ) ? $quantity : 1 ),
-            esc_attr( $product->id ),
-            esc_attr( $product->get_sku() ),
-            esc_attr( isset( $class ) ? $class : 'button' ),
-            esc_html( $product->add_to_cart_text() )
-        );
-
-    }
+add_action( 'wp_enqueue_scripts', 'mytheme_ajax_data', 99 );
+function mytheme_ajax_data(){
+    wp_localize_script('mrowl-main', 'mytheme_ajax',
+        array(
+            'url' => admin_url('admin-ajax.php')
+        )
+    );
 
 }
+
+
+
+function remove_product(){
+    $cart = WC()->instance()->cart;
+    $cart_item_key = $_POST['cart_item_key'];
+
+    if($cart_item_key){
+        $cart->set_quantity($cart_item_key,0);
+        $response['subtotal'] = $cart->subtotal;
+    }
+
+    print json_encode($response);
+    wp_die();
+}
+
+add_action('wp_ajax_remove_product', 'remove_product');
+add_action('wp_ajax_nopriv_remove_product', 'remove_product');
+
+function quantity_product(){
+    $cart = WC()->instance()->cart;
+    $cart_item_key = $_POST['cart_item_key'];
+    $data_item_id = $_POST['data_item_id'];
+    $data_item_price = $_POST['data_item_price'];
+    $quantity = $_POST['quantity'];
+
+    if($cart_item_key){
+        if($quantity == 0){
+            $cart->set_quantity($cart_item_key, 0);
+            $response['status'] = false;
+        }
+        else{
+            $cart->set_quantity($cart_item_key, $quantity);
+            $response['status'] = true;
+        }
+
+        $response['total'] = $data_item_price * $quantity;
+        $response['subtotal'] = $cart->subtotal;
+    }
+
+    print json_encode($response);
+    wp_die();
+}
+
+add_action('wp_ajax_quantity_product', 'quantity_product');
+add_action('wp_ajax_nopriv_quantity_product', 'quantity_product');
